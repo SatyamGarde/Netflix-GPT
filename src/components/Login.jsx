@@ -1,8 +1,24 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Header from "./Header";
-
+// import Validate from "../Utils/Validate";
+import { checkValidData } from "../Utils/Validate";
 const Login = () => {
   const [SignIn, SetSignIn] = useState(true);
+  const email = useRef(null);
+  const password = useRef(null);
+
+  const [errorMessage, seterrorMessage] =useState(null);
+  console.log(errorMessage)
+  const handleButtonClick = () => {
+    //Validate the form data
+    const message = checkValidData(email.current.value, password.current.value);
+    seterrorMessage(message);
+
+    // console.log(message);
+    // console.log(email.current.value);
+    // console.log(password.current.value);
+  };
+
   const ToggleSignIn = () => {
     SetSignIn(!SignIn);
   };
@@ -14,7 +30,12 @@ const Login = () => {
         <img src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"></img>
       </div>
       <div className="flex justify-center items-center h-screen">
-        <form className="absolute bg-black text-white p-12  w-3/12 bg-opacity-80">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+          className="absolute bg-black text-white p-12  w-3/12 bg-opacity-80"
+        >
           <h1 className="text-3xl font-bold my-8">
             {!SignIn ? "Sign Up" : "Sign In"}
           </h1>
@@ -26,22 +47,28 @@ const Login = () => {
             />
           )}
           <input
+            ref={email}
             type="text"
             placeholder="Email Address"
-            className="p-2 my-4 w-full bg-zinc-800 rounded-md"
+            className="p-2 my-4 w-full bg-zinc-800 rounded-md text-xl"
           />
           <input
+            ref={password}
             type="text"
             placeholder="Password"
-            className="p-2 my-2 mb-12 w-full bg-zinc-800 rounded-md"
+            className="p-2 my-2  w-full bg-zinc-800 rounded-md text-xl"
           />
-          <button className="p-4 mm-4 w-full bg-red-600 rounded-md">
+          <p className="text-red-500 mb-12 font-bold">{errorMessage}</p>
+          <button
+            onClick={handleButtonClick}
+            className="p-4 mm-4 w-full bg-red-600 rounded-md"
+          >
             {SignIn ? "Sign In" : "Sign Up"}
           </button>
           <div className="flex justify-between items-center my-3">
             <div>
               <input type="checkbox" className=" h-5 w-5 text-indigo-600" />
-              <label for="myCheckbox" className="ml-3 text-gray-700">
+              <label htmlFor="myCheckbox" className="ml-3 text-gray-700">
                 Remember me
               </label>
             </div>
