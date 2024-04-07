@@ -1,18 +1,13 @@
+import Body from "./components/Body";
+import Browse from "./components/Browse";
 
-import './App.css'
 
 function App() {
-
-
   return (
-    <>
-      
-      <h1>
-        Netflix clone using React.js
-      </h1>
-      
-    </>
-  )
+    <div>
+   <Body/>
+   </div>
+  );
 }
 
-export default App
+export default App;
