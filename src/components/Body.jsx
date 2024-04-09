@@ -2,7 +2,6 @@ import React from 'react'
 import Login from './Login'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Browse from './Browse'
-
 const Home = () => {
   return (
     <h1>This is home</h1>
