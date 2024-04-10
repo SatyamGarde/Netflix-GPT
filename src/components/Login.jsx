@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
-// import Validate from "../Utils/Validate";
+
 import { checkValidData } from "../Utils/Validate";
 import { BG_URL } from "../Utils/Constants";
 const Login = () => {
@@ -9,15 +9,11 @@ const Login = () => {
   const password = useRef(null);
 
   const [errorMessage, seterrorMessage] =useState(null);
-  console.log(errorMessage)
   const handleButtonClick = () => {
     //Validate the form data
     const message = checkValidData(email.current.value, password.current.value);
     seterrorMessage(message);
 
-    // console.log(message);
-    // console.log(email.current.value);
-    // console.log(password.current.value);
   };
 
   const ToggleSignIn = () => {
