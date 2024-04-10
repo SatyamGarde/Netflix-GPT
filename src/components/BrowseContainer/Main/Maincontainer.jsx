@@ -9,10 +9,8 @@ const Maincontainer = () => {
   if (!movies || movies.length === 0) return ;
 
   const mainMovie = movies[0];
-  // console.log("main movie",);
 
   const { original_title, overview, id } = mainMovie;
-
 
   return (
     <div>
@@ -21,5 +19,4 @@ const Maincontainer = () => {
     </div>
   )
 }
-
-export default Maincontainer
+export default Maincontainer;
