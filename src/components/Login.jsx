@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import Header from "./Header";
 // import Validate from "../Utils/Validate";
 import { checkValidData } from "../Utils/Validate";
+import { BG_URL } from "../Utils/Constants";
 const Login = () => {
   const [SignIn, SetSignIn] = useState(true);
   const email = useRef(null);
@@ -27,7 +28,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute ">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_large.jpg"></img>
+        <img src={BG_URL}></img>
       </div>
       <div className="flex justify-center items-center h-screen">
         <form
