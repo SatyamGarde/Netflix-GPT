@@ -27,10 +27,9 @@ export default function Modal({ open: defaultOpen, onClose, children }) {
         `}</style>
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 p-1 rounded-lg text-gray-400 bg-white hover:bg-gray-50 hover:text-gray-600"
+          className="absolute top-2 right-2 p-1 rounded-full text-white bg-gray-500 hover:bg-gray-50 hover:text-gray-600 px-5 text-2xl"
         >
-          {/* <X /> */}
-          button
+          X
         </button>
         {children}
       </div>
