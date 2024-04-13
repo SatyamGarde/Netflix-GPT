@@ -11,21 +11,21 @@ const VideoBackground = ({ id }) => {
 
   return (
     <div className="w-screen h-screen ">
-    <div>
-      <iframe
-        className="w-screen h-screen aspect-video"
-        src={
-          "https://www.youtube.com/embed/" +
-          trailerfromstore?.key +
-          "?&autoplay=1&mute=1"
-        }
-        title="YouTube video player"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        referrerpolicy="strict-origin-when-cross-origin"
-        allowfullscreen
-        style={{ transform: 'scale(1.1)' }}
-      ></iframe>
+      <div>
+        <iframe
+          className="w-screen h-screen aspect-video"
+          src={
+            "https://www.youtube.com/embed/" +
+            trailerfromstore?.key +
+            "?&autoplay=1&mute=1"
+          }
+          title="YouTube video player"
+        
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          style={{ transform: "scale(1.1)" }}
+        ></iframe>
       </div>
     </div>
   );
