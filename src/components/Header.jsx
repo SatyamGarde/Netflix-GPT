@@ -16,8 +16,8 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute z-20 flex flex-wrap bg-gradient-to-b from-black w-full justify-between items-center px-8">
-      <img className="  w-60 px-8 py-2 " src={LOGO_URL} alt="Logo"></img>
+    <div className="absolute z-30 flex flex-wrap bg-gradient-to-b from-black w-full justify-between items-center md:px-8">
+      <img className="  w-44 md:w-60 px-8 py-2 -mx-5" src={LOGO_URL} alt="Logo"></img>
       {GptSearchbar && (
         <select
           className="text-white bg-gray-900"
@@ -32,7 +32,7 @@ const Header = () => {
       )}
       <button
         onClick={handletoggleGptSearch}
-        className="text-white text-3xl bg-purple-800 p-2 rounded-lg px-3"
+        className="text-white text-xl md:text-3xl bg-purple-800 md:p-2 p-1 rounded-lg md:px-3"
       >
         {GptSearchbar? "HomePAge":"GPT Search"}
       </button>

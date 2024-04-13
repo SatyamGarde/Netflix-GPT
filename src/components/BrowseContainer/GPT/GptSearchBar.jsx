@@ -23,14 +23,14 @@ const GptSearchBar = () => {
 
   return (
     <div className="flex justify-center items-start h-screen">
-      <div className="bg-black p-4 w-2/3 flex justify-start items-center">
+      <div className="bg-black md:p-4 p-2 md:w-2/3 flex justify-start items-center">
         <input
         ref={MovieName}
           type="text"
-          className="p-5 w-full m-4 bg-white text-xl rounded-lg"
+          className="md:p-5 p-3 md:w-full w-38  m-2 bg-white text-xl rounded-lg"
           placeholder={lang[langKey].placeholder}
         />
-        <button className="text-white text-xl font-bold bg-red-700 w-40 p-5 rounded-lg" onClick={handleGptSearchClick}>
+        <button className="text-white text-xl font-bold bg-red-700 w-40 md:p-5 p-3 rounded-lg" onClick={handleGptSearchClick}>
           {lang[langKey].search}
         </button>
       </div>

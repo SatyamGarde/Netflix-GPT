@@ -9,6 +9,7 @@ const appStore = configureStore({
     GptSearch: GptSearchReducer,
     language: configReducer,
     gptMovies: moviesReducer,
+    MovieData: moviesReducer,
   },
 });
 

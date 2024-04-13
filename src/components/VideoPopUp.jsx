@@ -1,19 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import useMovieTrailer from "../../Hooks/useMovieTrailer";
+import useMovieTrailer from "./Hooks/useMovieTrailer";
 
-const VideoBackground = ({ id }) => {
+const VideoPopUp = ({ id }) => {
   const trailerfromstore = useSelector((store) => {
     return store.movies?.movieTrailer;
   });
 
   useMovieTrailer(id);
 
+  const desiredWedth = "calc(110vh)";
   return (
-    <div className="w-screen h-screen ">
-    <div>
+    <div className=" h-30" style={{ width: desiredWedth }}>
       <iframe
-        className="w-screen h-screen aspect-video"
+        className=" h-30 aspect-video mx-12 mt-14"
         src={
           "https://www.youtube.com/embed/" +
           trailerfromstore?.key +
@@ -24,11 +24,10 @@ const VideoBackground = ({ id }) => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
         allowfullscreen
-        style={{ transform: 'scale(1.1)' }}
+        style={{ transform: "scale(1.1)", width: desiredWedth }}
       ></iframe>
-      </div>
     </div>
   );
 };
 
-export default VideoBackground;
+export default VideoPopUp;

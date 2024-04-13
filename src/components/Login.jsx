@@ -23,15 +23,15 @@ const Login = () => {
   return (
     <div>
       <Header />
-      <div className="absolute ">
-        <img src={BG_URL}></img>
+      <div className="absolute  ">
+        <img className="h-screen md:h-auto object-cover" src={BG_URL}></img>
       </div>
       <div className="flex justify-center items-center h-screen">
         <form
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className="absolute bg-black text-white p-12  w-3/12 bg-opacity-80"
+          className="absolute bg-black text-white p-12 -mt-64 md:mt-64  md:w-3/12 bg-opacity-80"
         >
           <h1 className="text-3xl font-bold my-8">
             {!SignIn ? "Sign Up" : "Sign In"}
@@ -51,7 +51,7 @@ const Login = () => {
           />
           <input
             ref={password}
-            type="text"
+            type="password"
             placeholder="Password"
             className="p-2 my-2  w-full bg-zinc-800 rounded-md text-xl"
           />

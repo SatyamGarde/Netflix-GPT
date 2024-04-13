@@ -13,14 +13,14 @@ export const GptSearch = () => {
     <div className="relative w-full">
       <img
         src={BG_URL}
-        className="w-full h-auto"
+        className="w-full h-screen md:h-auto object-cover"
         alt="Background"
       />
       <div className="absolute inset-28">
         <GptSearchBar />
       </div>
       {isSearchResultsAvailable &&
-      <div className='absolute inset-52 mt-20 bg-black'>
+      <div className='absolute md:inset-52 inset-0 md:mt-20 mt-52 bg-black h-[45%]'>
         <MovieList title={"Searched Movies"} movies={GptMovies?.gptSearchMovies} />
       </div>
       }

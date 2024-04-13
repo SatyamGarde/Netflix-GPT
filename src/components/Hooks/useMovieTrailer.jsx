@@ -5,7 +5,9 @@ import { API_OPTIONS } from "../../Utils/Constants";
 
 const useMovieTrailer = (id)=>{
     const dispatch = useDispatch();
+    // console.log(id);
     const getMoviesById = async () => {
+      
       const data = await fetch(
         `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
         API_OPTIONS

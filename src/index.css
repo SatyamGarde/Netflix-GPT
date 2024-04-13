@@ -6,4 +6,12 @@
       display: none;
     }
   }
-  
+
+
+.modal {
+    width: 90%; /* Adjust as needed */
+    max-width: 600px; /* Adjust as needed */
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
