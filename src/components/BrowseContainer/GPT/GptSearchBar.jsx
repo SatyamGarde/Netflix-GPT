@@ -27,10 +27,10 @@ const GptSearchBar = () => {
         <input
         ref={MovieName}
           type="text"
-          className="md:p-5 p-3 md:w-full w-38  m-2 bg-white text-xl rounded-lg"
+          className="md:p-5 p-3 md:w-full w-38  m-1 md:m-2 bg-white text-xl rounded-lg"
           placeholder={lang[langKey].placeholder}
         />
-        <button className="text-white text-xl font-bold bg-red-700 w-40 md:p-5 p-3 rounded-lg" onClick={handleGptSearchClick}>
+        <button className="text-white text-xl font-bold bg-red-700 hover:text-gray-300 hover:bg-red-800 w-36 md:p-5 p-3  rounded-lg" onClick={handleGptSearchClick}>
           {lang[langKey].search}
         </button>
       </div>

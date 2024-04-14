@@ -37,7 +37,7 @@ const Header = () => {
       {user &&(<div className="flex-grow flex justify-end">
         {GptSearchbar && (
           <select
-            className="text-white bg-gray-900 rounded-lg"
+            className="text-white bg-gray-900 rounded-lg my-4" 
             onChange={handleLanguageChange}
           >
             {SUPPORTED_LANGUAGES.map((lang) => (
@@ -51,14 +51,14 @@ const Header = () => {
           {GptSearchbar ? (
             <button
               onClick={handletoggleGptSearch}
-              className="text-white text-xl md:text-3xl bg-purple-800 md:p-2 p-1 rounded-lg md:px-3"
+              className="text-white text-xl md:text-3xl bg-purple-800 md:p-2 p-1 rounded-lg md:px-3 hover:bg-purple-900 hover:text-gray-300"
             >
-              HomePAge
+              Home
             </button>
           ) : (
             <button
               onClick={handletoggleGptSearch}
-              className="text-white text-xl md:text-3xl bg-purple-800 md:p-2 p-2 mx-8 rounded-lg md:px-3"
+              className="text-white text- md:text-3xl bg-purple-800 md:p-2 p-1 mx-6 rounded-lg md:px-3 hover:bg-purple-900 hover:text-gray-300"
             >
               GPT Search
             </button>
@@ -68,7 +68,7 @@ const Header = () => {
             alt="UserIcon"
             src={user?.photoURL}
           />
-          <button onClick={handleSignOut} className="font-bold text-xl text-white ml-2">Login</button>
+          <button onClick={handleSignOut} className="font-bold text-xl text-white ml-2 hover:text-red-500">Login</button>
         </div>
       </div>)}
     </div>
