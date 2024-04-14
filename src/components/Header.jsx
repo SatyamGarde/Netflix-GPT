@@ -3,9 +3,11 @@ import { LOGO_URL, SUPPORTED_LANGUAGES } from "../Utils/Constants";
 import { useDispatch, useSelector } from "react-redux";
 import { showGptSearch } from "./BrowseContainer/GPT/GptSearchSlice";
 import { changeLanguage } from "./BrowseContainer/GPT/languageSlice";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../Utils/Firebase";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { addUer, removeUser } from "../Utils/userSlice";
 const Header = () => {
   const GptSearchbar = useSelector((store) => store.GptSearch.GptSearch);
   const navigate = useNavigate();
@@ -24,12 +26,34 @@ const Header = () => {
   const handleSignOut = ()=>{
     signOut(auth).then(() => {
       // Sign-out successful.
-      navigate("/")
     }).catch((error) => {
       // An error happened.
       navigate("/error");
     });
   }
+
+
+
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUer({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        navigate("/browse");
+      } else {
+        // User is signed out
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+  }, []);
 
   return (
     <div className="absolute z-30 flex flex-wrap bg-gradient-to-b from-black w-full items-center md:px-8">

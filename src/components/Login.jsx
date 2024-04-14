@@ -10,12 +10,10 @@ import { auth } from "../Utils/Firebase";
 
 import { checkValidData } from "../Utils/Validate";
 import { BG_URL } from "../Utils/Constants";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUer } from "../Utils/userSlice";
 
 const Login = () => {
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [SignIn, SetSignIn] = useState(true);
   const name = useRef(null);
@@ -42,26 +40,25 @@ const Login = () => {
         .then((userCredential) => {
           const user = userCredential.user;
           updateProfile(user, {
-            displayName: name.current.value, photoURL: "https://avatars.githubusercontent.com/u/90107690?v=4"
-          }).then(() => {
-            // Profile updated!
-            const { uid, email, displayName, photoURL } = auth.currentUser;
-        dispatch(
-          addUer({
-            uid: uid,
-            email: email,
-            displayName: displayName,
-            photoURL: photoURL,
+            displayName: name.current.value,
+            photoURL: "https://avatars.githubusercontent.com/u/90107690?v=4",
           })
-        );
-            navigate("/browse");
-          }).catch((error) => {
-            // An error occurred
-            seterrorMessage(error.message);
-          });
-
-          console.log(user);
-          
+            .then(() => {
+              // Profile updated!
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUer({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+            })
+            .catch((error) => {
+              // An error occurred
+              seterrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -78,8 +75,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -111,7 +106,7 @@ const Login = () => {
           </h1>
           {!SignIn && (
             <input
-            ref={name}
+              ref={name}
               type="text"
               placeholder="Name"
               className="p-2 my-4 w-full bg-zinc-800"
