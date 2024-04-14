@@ -1,20 +1,10 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { addMoviesDataById } from "../../../Utils/moviesSlice";
-import { useEffect } from "react";
+
 
 const MovieList = ({ title, movies }) => {
  
- 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (movies) {
-      dispatch(addMoviesDataById(movies));
-    }
-  }, [dispatch, movies]);
   if (!movies) return; 
 
   return (

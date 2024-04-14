@@ -12,7 +12,6 @@ const Header = () => {
   const GptSearchbar = useSelector((store) => store.GptSearch.GptSearch);
   const navigate = useNavigate();
   const user = useSelector(store=> store.user);
-  console.log(user);
 
   const dispatch = useDispatch();
   const handletoggleGptSearch = () => {
