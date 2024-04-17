@@ -8,9 +8,9 @@ const VideoBackground = ({ id }) => {
   });
 
   useMovieTrailer(id);
-
+  const desiredWidth = "calc(186.4vh)";
   return (
-    <div className="w-screen h-screen ">
+    <div className=" h-screen ">
       <div>
         <iframe
           className="w-screen h-screen aspect-video"
@@ -20,11 +20,10 @@ const VideoBackground = ({ id }) => {
             "?&autoplay=1&mute=1"
           }
           title="YouTube video player"
-        
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          style={{ transform: "scale(1.1)" }}
+          style={{ transform: "scale(1.1)", width: desiredWidth }}
         ></iframe>
       </div>
     </div>
