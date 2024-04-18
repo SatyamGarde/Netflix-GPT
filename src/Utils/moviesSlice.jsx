@@ -10,6 +10,7 @@ const moviesSlice = createSlice({
     UpcomingMovies: null,
     gptSearchMovies: null,
     MoviesDataByID: null,
+    SuggestedMovies: null,
   },
   reducers: {
     addNowPlayingMovies: (state, action) => {
@@ -32,7 +33,10 @@ const moviesSlice = createSlice({
     },
     addMoviesDataById: (state, action) =>{
       state.MoviesDataByID = action.payload;
-    }
+    },
+    addSuggestedMovies: (state, action) =>{
+      state.SuggestedMovies = action.payload;
+    },
   },
 });
 
@@ -44,6 +48,7 @@ export const {
   addUpcomingMovies,
   addGptSearchMovies,
   addMoviesDataById,
+  addSuggestedMovies,
 } = moviesSlice.actions;
 
 export default moviesSlice.reducer;

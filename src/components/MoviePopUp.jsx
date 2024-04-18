@@ -6,14 +6,19 @@ import { useState } from "react";
 import Modal from "../Utils/Modal";
 import useMovieDataById from "./Hooks/useMovieDataById";
 import { useSelector } from "react-redux";
+import useSuggestedMovies from "./Hooks/useSuggestedMovies";
+import MovieList from "./BrowseContainer/Secondary/MovieList";
 
 export default function MoviePopUp() {
   const { id } = useParams();
   const navigate = useNavigate();
   useMovieDataById(id);
+  useSuggestedMovies(id);
+
+ const SuggestMovies = useSelector((store)=>store.SuggestMovies);
+
 
   const moviesData = useSelector((store) => store.MovieData.MoviesDataByID);
-  console.log("moviesdata", moviesData);
   const [open, setOpen] = useState(false);
 
   const handleCloseAndNavigate = () => {
@@ -35,11 +40,11 @@ export default function MoviePopUp() {
           <VideoPopUp id={id} />
         </div>
 
-        {/* Modal content */}
+      
         <div className="relative z-10 -mx-5" style={{ height: desiredHeight, width: desiredWidth }}>
           <div className="  h-full " style={{ marginTop: "550px" }}>
             <div className=" my-4 w-full text-white">
-              {/* Check if moviesData exists before accessing its properties */}
+              
               {moviesData && (
                 <>
                   <h1 className="font-bold justify-center text-5xl pb-9 px-12 bg-transparent ">{moviesData.title}</h1>
@@ -55,6 +60,9 @@ export default function MoviePopUp() {
                 </>
               )}
             </div>
+            <div>
+          <MovieList title={"Suggested Movies"} movies={SuggestMovies?.SuggestedMovies} />
+          </div>
           </div>
         </div>
       </Modal>

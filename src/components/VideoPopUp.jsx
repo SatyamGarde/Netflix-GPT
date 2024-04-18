@@ -8,6 +8,7 @@ const VideoPopUp = ({ id }) => {
   });
 
   useMovieTrailer(id);
+  
 
   const desiredWedth = "calc(110vh)";
   return (
