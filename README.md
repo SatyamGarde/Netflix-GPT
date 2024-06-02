@@ -100,18 +100,27 @@ The project uses Firebase for authentication. Make sure you have Firebase config
 
 Here are some screenshots of the application:
 
+### Login Page
+
+![Login PAge](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/Login%20Page.jpg)
+
 ### Home Page
 
-![Home Page](screenshots/home.png)
+![Home Page](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/home%20page.jpg)
+
+### Movies List
+
+![Movies List](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/home%20List.jpg)
 
 ### Movie Search
 
-![Movie Search](screenshots/restaurant-list.png)
-
-### Movie Suggestions
-
-![movie suggestions](screenshots/restaurant-menu.png)
+![Movie Search](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/search%20page.jpg)
 
 ### Movie Popup
 
-![movie Popup](screenshots/cart.png)
+![movie Popup](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/Popup%20page.jpg)
+
+### Movie Suggestions
+
+![movie suggestions](https://github.com/SatyamGarde/Netflix-Clone/blob/main/src/assets/suggested%20popup.jpg)
+
