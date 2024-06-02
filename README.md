@@ -4,6 +4,7 @@ Netflix-GPT is a React-based web application that integrates with Google's Bard 
 
 ## Table of Contents
 - [Features](#features)
+- [Website](#website)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
@@ -18,6 +19,9 @@ Netflix-GPT is a React-based web application that integrates with Google's Bard 
 - **Trailers:** Display movie trailers.
 - **Multi-language Support:** Supports multiple languages including English, Hindi, and Spanish.
 - **Responsive Design:** Works well on both desktop and mobile devices.
+
+## Website
+Check out the live website of the project [here](https://your-website-link.com).
 
 ## Installation
 
