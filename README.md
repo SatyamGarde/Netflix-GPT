@@ -21,7 +21,7 @@ Netflix-GPT is a React-based web application that integrates with Google's Bard 
 - **Responsive Design:** Works well on both desktop and mobile devices.
 
 ## Website
-Check out the live website of the project [here](https://netflix-gpt.netlify.app/).
+Check out the live website of the project [here](https://netflixgpt.netlify.app/).
 
 ## Installation
 
